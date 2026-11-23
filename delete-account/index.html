@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071217">
+<meta name="description" content="صفحة رسمية لطلب حذف حساب EURO CARS والتحقق من ملكية الحساب عبر SMS.">
+<meta name="robots" content="index,follow">
+<title>طلب حذف الحساب | EURO CARS</title>
+<style>
+:root{color-scheme:dark;--bg:#071217;--panel:#101e25;--line:#263a42;--text:#f4f7f8;--muted:#a9b8bd;--green:#34d399;--green2:#a7f3d0;--red:#fda4af}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -15%,#123c36 0,transparent 55%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.85}
+a{color:var(--green2)}.wrap{width:min(760px,calc(100% - 28px));margin:auto}
+header{padding:38px 0 20px}.brand{font-size:13px;letter-spacing:2px;font-weight:900;color:var(--green);text-decoration:none}
+h1{font-size:clamp(27px,5vw,40px);line-height:1.35;margin:12px 0}
+.lead{color:var(--muted);margin:0;max-width:650px}
+.card,.info{background:linear-gradient(145deg,#102129,#0c171d);border:1px solid var(--line);border-radius:20px;padding:22px;margin:16px 0;box-shadow:0 15px 35px #0003}
+label{display:block;font-size:14px;font-weight:700;margin:0 0 14px}
+input,select{display:block;width:100%;margin-top:7px;padding:13px 14px;border:1px solid #3a5058;border-radius:12px;background:#071217;color:var(--text);font:inherit;outline:none}
+input:focus,select:focus{border-color:var(--green)}
+input[dir=ltr]{text-align:left}
+button{border:0;border-radius:12px;padding:13px 18px;font:inherit;font-weight:800;cursor:pointer}
+.primary{width:100%;background:var(--green);color:#06231a}
+.secondary{background:transparent;color:var(--muted);border:1px solid var(--line)}
+button:disabled{opacity:.55;cursor:wait}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.note{font-size:12px;color:var(--muted);margin:12px 0 0}
+.status{margin-top:14px;padding:12px 14px;border-radius:12px;font-size:14px}
+.error{background:#7f1d1d33;border:1px solid #fb718544;color:var(--red)}
+.success{background:#064e3b55;border:1px solid #34d39955;color:#d1fae5}
+.hidden{display:none!important}
+.info h2{font-size:18px;margin:0 0 10px;color:var(--green2)}
+.info ul{padding-right:22px;margin:8px 0;color:#d5e0e3}
+.info li{padding:4px 0}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:18px 0 36px}
+@media(max-width:560px){header{padding-top:27px}.card,.info{padding:17px;border-radius:16px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header>
+<a class="brand" href="/">EURO CARS</a>
+<p class="brand" style="margin:22px 0 0;letter-spacing:1px">ACCOUNT DELETION</p>
+<h1>طلب حذف حساب EURO</h1>
+<p class="lead">يمكنك طلب حذف حسابك من هذه الصفحة دون تسجيل الدخول إلى التطبيق. نتحقق من ملكية الحساب حصراً عبر رمز SMS يُرسل إلى رقم الهاتف المسجّل. لا تتوفر وسيلة تحقق بديلة عبر البريد الإلكتروني.</p>
+</header>
+
+<section class="card" aria-label="نموذج حذف الحساب">
+<div id="step-phone">
+<form id="send-form">
+<div class="grid">
+<label>نوع الحساب
+<select id="role" required>
+<option value="customer">عميل</option>
+<option value="workshop">ورشة</option>
+<option value="marketer">مسوّق</option>
+</select>
+</label>
+<label>رقم الهاتف المسجّل بالحساب
+<input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="09xxxxxxxx أو 9639xxxxxxxx" dir="ltr" required>
+</label>
+</div>
+<button class="primary" id="send-button" type="submit">إرسال رمز التحقق</button>
+<p class="note">نرسل رمز تحقق لمرة واحدة عبر رسالة SMS إلى رقم الهاتف الذي أدخلته. صلاحية الرمز 10 دقائق.</p>
+</form>
+</div>
+
+<div id="step-code" class="hidden">
+<form id="confirm-form">
+<label>رمز التحقق المرسل برسالة SMS
+<input id="code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" placeholder="••••••" dir="ltr" required>
+</label>
+<button class="primary" id="confirm-button" type="submit">تأكيد وتسجيل طلب الحذف</button>
+<button class="secondary" id="change-phone" type="button" style="width:100%;margin-top:9px">تغيير رقم الهاتف</button>
+</form>
+</div>
+
+<div id="result" class="hidden"></div>
+<div id="feedback" class="hidden status" role="status" aria-live="polite"></div>
+</section>
+
+<section class="info">
+<h2>ماذا يحدث بعد الطلب؟</h2>
+<ul>
+<li>تبدأ مهلة استرجاع مدتها 30 يوماً من تاريخ تسجيل الطلب.</li>
+<li>يمكنك إلغاء الطلب من داخل التطبيق ما دام تنفيذه لم يكتمل.</li>
+<li>بعد انتهاء المهلة، يُعطّل الحساب وتُزال بيانات الهوية ووسائل تسجيل الدخول والبيانات الشخصية، بما فيها عناوين التسليم المحفوظة والمركبات ورموز الإشعارات وصور الملف الشخصي.</li>
+<li>إذا بقي طلب تجاري قيد التنفيذ، نحتفظ مؤقتاً ببيانات الاتصال أو التسليم الضرورية لإكماله فقط، ونزيلها تلقائياً عند إغلاق الطلب. وتُحذف صور الطلبات الخاصة عند إغلاق الطلب المرتبط بها.</li>
+<li>لا يمنع وجود دين أو رصيد كاش باك أو عمولات أو طلب سحب أو طلب تجاري مفتوح تنفيذ حذف الهوية. نحتفظ بمعرّف داخلي غير قابل لتسجيل الدخول وبالسجلات المالية والتجارية اللازمة لتسوية الالتزامات والمحاسبة، مع فصلها عن الاسم ورقم الهاتف وبيانات الاتصال. طلب الحذف لا يلغي ديناً مستحقاً ولا يسقط مبلغاً مستحقاً للمستخدم.</li>
+<li>إذا كان لك رصيد كاش باك أو عمولات مستحقة لم تُحوّل قبل الحذف، تواصل مع دعم EURO للتحقق من الاستحقاق وترتيب التسوية يدوياً؛ ولا يُعد تعطيل الحساب تنازلاً عن المبلغ المستحق.</li>
+<li>نحتفظ بالسجلات المالية للمدة اللازمة قانونياً ومحاسبياً وتسوية النزاعات، ثم نحذفها أو نجهّلها عندما تنتهي الحاجة المشروعة للاحتفاظ بها.</li>
+</ul>
+<p>إذا لم يعد رقم الهاتف متاحاً لك، أو لم يصلك رمز SMS، أو كان لديك أكثر من حساب مرتبط بالرقم، تواصل مع الدعم للتحقق اليدوي من هويتك.</p>
+<a href="https://wa.me/963982026134?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%AD%D8%B0%D9%81%20%D8%AD%D8%B3%D8%A7%D8%A8%20EURO" target="_blank" rel="noopener noreferrer">التواصل مع دعم EURO عبر واتساب</a>
+</section>
+
+<p class="note">راجع أيضاً <a href="/">سياسة الخصوصية</a>.</p>
+<footer>© 2026 EURO CARS</footer>
+</main>
+
+<script>
+(function(){
+  const API="https://control-panel-euro-cars.onrender.com/api/public/account-deletion";
+  const $=id=>document.getElementById(id);
+  let otpToken="";
+  function feedback(message,type){
+    const el=$("feedback");el.textContent=message;el.className="status "+(type==="error"?"error":"success");
+  }
+  async function post(payload){
+    const response=await fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+    let data={};try{data=await response.json()}catch(_){}
+    if(!response.ok)throw new Error(data.error||"تعذر إكمال الطلب. حاول لاحقاً.");
+    return data;
+  }
+  $("send-form").addEventListener("submit",async event=>{
+    event.preventDefault();const button=$("send-button");button.disabled=true;button.textContent="جارٍ إرسال الرمز…";$("feedback").className="hidden";
+    try{
+      const phone=$("phone").value.trim();const role=$("role").value;
+      const data=await post({action:"send-code",phone,role});
+      otpToken=data.otpToken||"";
+      if(!otpToken)throw new Error("لم يصل رمز التحقق. حاول لاحقاً.");
+      $("step-phone").classList.add("hidden");$("step-code").classList.remove("hidden");$("code").focus();
+      feedback(data.message||"إذا كان الرقم مرتبطاً بحساب، سيصلك رمز التحقق عبر SMS.","success");
+    }catch(error){feedback(error instanceof Error?error.message:"حدث خطأ غير متوقع.","error")}
+    finally{button.disabled=false;button.textContent="إرسال رمز التحقق"}
+  });
+  $("confirm-form").addEventListener("submit",async event=>{
+    event.preventDefault();const button=$("confirm-button");button.disabled=true;button.textContent="جارٍ التحقق…";$("feedback").className="hidden";
+    try{
+      const data=await post({action:"confirm-code",phone:$("phone").value.trim(),role:$("role").value,otpCode:$("code").value.trim(),otpToken});
+      const request=data.request||{};const fmt=value=>value?new Intl.DateTimeFormat("ar-SY",{dateStyle:"long",timeStyle:"short"}).format(new Date(value)):"—";
+      $("step-code").classList.add("hidden");
+      $("result").classList.remove("hidden");
+      $("result").className="status success";
+      $("result").innerHTML="<strong>تم تسجيل طلب حذف الحساب</strong><p>تاريخ الطلب: "+fmt(request.requestedAt)+"</p><p>موعد تنفيذ الحذف: "+fmt(request.dueAt)+"</p><p>يمكنك إلغاء الطلب من داخل التطبيق ما دام تنفيذه لم يكتمل.</p>";
+      feedback(data.message||"تم تسجيل طلب حذف الحساب بنجاح.","success");
+    }catch(error){feedback(error instanceof Error?error.message:"حدث خطأ غير متوقع.","error")}
+    finally{button.disabled=false;button.textContent="تأكيد وتسجيل طلب الحذف"}
+  });
+  $("change-phone").addEventListener("click",()=>{otpToken="";$("code").value="";$("step-code").classList.add("hidden");$("step-phone").classList.remove("hidden");$("feedback").className="hidden"});
+})();
+</script>
+</body>
+</html>
