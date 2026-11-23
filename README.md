@@ -2,12 +2,13 @@
 
 Bilingual Arabic/English responsive privacy policy for the EURO CARS Android app.
 
-## Publish with GitHub Pages
+## Render deployment
 
-1. Open **Settings → Pages** in this repository.
-2. Under **Build and deployment**, select **GitHub Actions** as the source.
-3. The workflow at `.github/workflows/pages.yml` publishes the site from `main`.
-4. Expected public URL: https://aboudwebs.github.io/euro-car-privacy-policy/
+The repository is deployed on Render at:
+- https://euro-car-privacy-policy.onrender.com/
+- https://euro-car-privacy-policy.onrender.com/delete-account/
+
+Configure the Render Static Site to publish the repository root from the `main` branch. The account-deletion page is a static HTML file under `delete-account/index.html`.
 
 ## Public pages on Render
 
