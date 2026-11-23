@@ -3,86 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#071217">
-<meta name="description" content="صفحة رسمية لطلب حذف حساب EURO CARS والتحقق من ملكية الحساب عبر SMS.">
-<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#06080e">
+<meta name="description" content="الصفحة الرسمية لطلب حذف حساب EURO CARS والتحقق من ملكية الحساب عبر SMS.">
 <title>طلب حذف الحساب | EURO CARS</title>
 <style>
-:root{color-scheme:dark;--bg:#071217;--panel:#101e25;--line:#263a42;--text:#f4f7f8;--muted:#a9b8bd;--green:#34d399;--green2:#a7f3d0;--red:#fda4af}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -15%,#123c36 0,transparent 55%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.85}
-a{color:var(--green2)}.wrap{width:min(760px,calc(100% - 28px));margin:auto}
-header{padding:38px 0 20px}.brand{font-size:13px;letter-spacing:2px;font-weight:900;color:var(--green);text-decoration:none}
-h1{font-size:clamp(27px,5vw,40px);line-height:1.35;margin:12px 0}
-.lead{color:var(--muted);margin:0;max-width:650px}
-.card,.info{background:linear-gradient(145deg,#102129,#0c171d);border:1px solid var(--line);border-radius:20px;padding:22px;margin:16px 0;box-shadow:0 15px 35px #0003}
-label{display:block;font-size:14px;font-weight:700;margin:0 0 14px}
-input,select{display:block;width:100%;margin-top:7px;padding:13px 14px;border:1px solid #3a5058;border-radius:12px;background:#071217;color:var(--text);font:inherit;outline:none}
-input:focus,select:focus{border-color:var(--green)}
-input[dir=ltr]{text-align:left}
-button{border:0;border-radius:12px;padding:13px 18px;font:inherit;font-weight:800;cursor:pointer}
-.primary{width:100%;background:var(--green);color:#06231a}
-.secondary{background:transparent;color:var(--muted);border:1px solid var(--line)}
-button:disabled{opacity:.55;cursor:wait}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.note{font-size:12px;color:var(--muted);margin:12px 0 0}
-.status{margin-top:14px;padding:12px 14px;border-radius:12px;font-size:14px}
-.error{background:#7f1d1d33;border:1px solid #fb718544;color:var(--red)}
-.success{background:#064e3b55;border:1px solid #34d39955;color:#d1fae5}
-.hidden{display:none!important}
-.info h2{font-size:18px;margin:0 0 10px;color:var(--green2)}
-.info ul{padding-right:22px;margin:8px 0;color:#d5e0e3}
-.info li{padding:4px 0}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:18px 0 36px}
-@media(max-width:560px){header{padding-top:27px}.card,.info{padding:17px;border-radius:16px}.grid{grid-template-columns:1fr}}
+:root{color-scheme:dark;--bg:#06080e;--panel:#0b0f1a;--panel2:#101923;--text:#fff;--muted:#aeb8c8;--line:#293246;--accent:#0a84ff;--accent2:#69b5ff;--link:#69b5ff;--red:#fda4af;--green:#86efac}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -15%,#142b49 0,transparent 55%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.85}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}.wrap{width:min(920px,calc(100% - 32px));margin:auto}
+.top{padding:42px 0 25px;text-align:center}.mark{width:76px;height:76px;border:1px solid #263b55;border-radius:22px;display:block;object-fit:cover;margin:0 auto 15px;background:#0b0f1a;box-shadow:0 8px 28px #0006}.eyebrow{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:2px}.top h1{font-size:clamp(27px,5vw,42px);margin:7px 0 4px;line-height:1.3}.top p{color:var(--muted);margin:0 auto;max-width:680px}
+.switch{display:flex;justify-content:center;gap:8px;margin:22px 0}.switch button{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:8px 19px;border-radius:999px;font:inherit;cursor:pointer}.switch button[aria-pressed=true]{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:800}
+.meta{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:0 0 22px}.meta span{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:4px 11px;border-radius:999px}
+.card,.section,.contact{background:linear-gradient(145deg,var(--panel),#101923);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:14px 0;box-shadow:0 12px 30px #0002}.card{border-color:#174a7c}.section h2,.contact h2{font-size:19px;margin:0 0 10px;color:var(--accent2)}.section p,.contact p{margin:8px 0;color:#d7e0e7}
+label{display:block;font-size:14px;font-weight:700;margin:0 0 14px}input,select{display:block;width:100%;margin-top:7px;padding:13px 14px;border:1px solid #35445d;border-radius:12px;background:#070b13;color:var(--text);font:inherit;outline:none}input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px #0a84ff22}input[dir=ltr]{text-align:left}
+button{border:0;border-radius:12px;padding:13px 18px;font:inherit;font-weight:800;cursor:pointer}.primary{width:100%;background:var(--accent);color:#fff}.secondary{width:100%;margin-top:9px;background:transparent;color:var(--muted);border:1px solid var(--line)}button:disabled{opacity:.55;cursor:wait}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.note{font-size:12px;color:var(--muted);margin:12px 0 0}.status{margin-top:14px;padding:12px 14px;border-radius:12px;font-size:14px;overflow-wrap:anywhere}.error{background:#7f1d1d33;border:1px solid #fb718544;color:var(--red)}.success{background:#064e3b33;border:1px solid #34d39955;color:#d1fae5}.hidden{display:none!important}
+.info ul{margin:8px 0;padding-inline-start:23px;color:#d7e0e7}.info li{padding:4px 0}.contact{background:linear-gradient(145deg,#10243a,#0b0f1a)}.footer{text-align:center;color:var(--muted);font-size:12px;padding:25px 0 40px}.ltr{direction:ltr;unicode-bidi:embed;display:inline-block}
+body[dir="ltr"] .info ul{padding-left:23px;padding-right:0}body[dir="ltr"] .section,body[dir="ltr"] .info{text-align:left}
+@media(max-width:600px){.top{padding-top:30px}.card,.section,.contact{padding:18px 17px;border-radius:15px}.wrap{width:min(100% - 22px,920px)}.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<main class="wrap">
-<header>
-<a class="brand" href="/">EURO CARS</a>
-<p class="brand" style="margin:22px 0 0;letter-spacing:1px">ACCOUNT DELETION</p>
-<h1>طلب حذف حساب EURO</h1>
-<p class="lead">يمكنك طلب حذف حسابك من هذه الصفحة دون تسجيل الدخول إلى التطبيق. نتحقق من ملكية الحساب حصراً عبر رمز SMS يُرسل إلى رقم الهاتف المسجّل. لا تتوفر وسيلة تحقق بديلة عبر البريد الإلكتروني.</p>
+<header class="top wrap">
+<img class="mark" src="https://raw.githubusercontent.com/aboudwebs/Euro-car.syria/main/branding/icon_1024.png" alt="EURO CARS app icon">
+<div class="eyebrow">EURO CARS</div>
+<h1 id="page-title">طلب حذف الحساب</h1>
+<p id="page-subtitle">يمكنك طلب حذف حسابك دون تسجيل الدخول إلى التطبيق. نتحقق من ملكية الحساب عبر رمز SMS يُرسل إلى رقم الهاتف المسجّل.</p>
+<div class="switch" role="group" aria-label="Language">
+<button type="button" id="ar-btn" aria-pressed="true">العربية</button>
+<button type="button" id="en-btn" aria-pressed="false">English</button>
+</div>
+<div class="meta"><span id="meta-label">التحقق عبر رسالة SMS</span><span>EURO CARS · Android</span></div>
 </header>
-
-<section class="card" aria-label="نموذج حذف الحساب">
+<main class="wrap">
+<section class="card" aria-label="Account deletion form">
 <div id="step-phone">
 <form id="send-form">
 <div class="grid">
-<label>نوع الحساب
+<label><span data-ar="نوع الحساب" data-en="Account type">نوع الحساب</span>
 <select id="role" required>
-<option value="customer">عميل</option>
-<option value="workshop">ورشة</option>
-<option value="marketer">مسوّق</option>
+<option value="customer" data-ar="عميل" data-en="Customer">عميل</option>
+<option value="workshop" data-ar="ورشة" data-en="Workshop">ورشة</option>
+<option value="marketer" data-ar="مسوّق" data-en="Marketer">مسوّق</option>
 </select>
 </label>
-<label>رقم الهاتف المسجّل بالحساب
+<label><span data-ar="رقم الهاتف المسجّل بالحساب" data-en="Phone number registered to your account">رقم الهاتف المسجّل بالحساب</span>
 <input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="09xxxxxxxx أو 9639xxxxxxxx" dir="ltr" required>
 </label>
 </div>
 <button class="primary" id="send-button" type="submit">إرسال رمز التحقق</button>
-<p class="note">نرسل رمز تحقق لمرة واحدة عبر رسالة SMS إلى رقم الهاتف الذي أدخلته. صلاحية الرمز 10 دقائق.</p>
+<p class="note" id="sms-note">نرسل رمز تحقق لمرة واحدة عبر SMS إلى رقم الهاتف الذي أدخلته. صلاحية الرمز 10 دقائق.</p>
 </form>
 </div>
-
 <div id="step-code" class="hidden">
 <form id="confirm-form">
-<label>رمز التحقق المرسل برسالة SMS
+<label><span id="code-label">رمز التحقق المرسل برسالة SMS</span>
 <input id="code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" placeholder="••••••" dir="ltr" required>
 </label>
 <button class="primary" id="confirm-button" type="submit">تأكيد وتسجيل طلب الحذف</button>
-<button class="secondary" id="change-phone" type="button" style="width:100%;margin-top:9px">تغيير رقم الهاتف</button>
+<button class="secondary" id="change-phone" type="button">تغيير رقم الهاتف</button>
 </form>
 </div>
-
 <div id="result" class="hidden"></div>
 <div id="feedback" class="hidden status" role="status" aria-live="polite"></div>
 </section>
-
-<section class="info">
-<h2>ماذا يحدث بعد الطلب؟</h2>
-<ul>
+<section class="section info">
+<h2 id="info-title">ماذا يحدث بعد الطلب؟</h2>
+<ul id="info-list">
 <li>تبدأ مهلة استرجاع مدتها 30 يوماً من تاريخ تسجيل الطلب.</li>
 <li>يمكنك إلغاء الطلب من داخل التطبيق ما دام تنفيذه لم يكتمل.</li>
 <li>بعد انتهاء المهلة، يُعطّل الحساب وتُزال بيانات الهوية ووسائل تسجيل الدخول والبيانات الشخصية، بما فيها عناوين التسليم المحفوظة والمركبات ورموز الإشعارات وصور الملف الشخصي.</li>
@@ -91,54 +77,69 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:18px 0 36px}
 <li>إذا كان لك رصيد كاش باك أو عمولات مستحقة لم تُحوّل قبل الحذف، تواصل مع دعم EURO للتحقق من الاستحقاق وترتيب التسوية يدوياً؛ ولا يُعد تعطيل الحساب تنازلاً عن المبلغ المستحق.</li>
 <li>نحتفظ بالسجلات المالية للمدة اللازمة قانونياً ومحاسبياً وتسوية النزاعات، ثم نحذفها أو نجهّلها عندما تنتهي الحاجة المشروعة للاحتفاظ بها.</li>
 </ul>
-<p>إذا لم يعد رقم الهاتف متاحاً لك، أو لم يصلك رمز SMS، أو كان لديك أكثر من حساب مرتبط بالرقم، تواصل مع الدعم للتحقق اليدوي من هويتك.</p>
-<a href="https://wa.me/963982026134?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%AD%D8%B0%D9%81%20%D8%AD%D8%B3%D8%A7%D8%A8%20EURO" target="_blank" rel="noopener noreferrer">التواصل مع دعم EURO عبر واتساب</a>
+<p id="help-text">إذا لم يعد رقم الهاتف متاحاً لك، أو لم يصلك رمز SMS، أو كان لديك أكثر من حساب مرتبط بالرقم، تواصل مع الدعم للتحقق اليدوي من هويتك.</p>
+<a id="support-link" href="https://wa.me/963982026134?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%AD%D8%B0%D9%81%20%D8%AD%D8%B3%D8%A7%D8%A8%20EURO" target="_blank" rel="noopener noreferrer">التواصل مع دعم EURO عبر واتساب</a>
 </section>
-
-<p class="note">راجع أيضاً <a href="/">سياسة الخصوصية</a>.</p>
-<footer>© 2026 EURO CARS</footer>
+<p class="note"><a href="/" id="policy-link">العودة إلى سياسة الخصوصية</a></p>
+<footer class="footer">© 2026 EURO CARS · <span id="footer-label">جميع الحقوق محفوظة</span></footer>
 </main>
-
 <script>
 (function(){
   const API="https://control-panel-euro-cars.onrender.com/api/public/account-deletion";
-  const $=id=>document.getElementById(id);
-  let otpToken="";
-  function feedback(message,type){
-    const el=$("feedback");el.textContent=message;el.className="status "+(type==="error"?"error":"success");
+  const $=id=>document.getElementById(id);let otpToken="",lang="ar";
+  const translations={
+    ar:{title:"طلب حذف الحساب",subtitle:"يمكنك طلب حذف حسابك دون تسجيل الدخول إلى التطبيق. نتحقق من ملكية الحساب عبر رمز SMS يُرسل إلى رقم الهاتف المسجّل.",meta:"التحقق عبر رسالة SMS",send:"إرسال رمز التحقق",sending:"جارٍ إرسال الرمز…",sms:"نرسل رمز تحقق لمرة واحدة عبر SMS إلى رقم الهاتف الذي أدخلته. صلاحية الرمز 10 دقائق.",code:"رمز التحقق المرسل برسالة SMS",confirm:"تأكيد وتسجيل طلب الحذف",verifying:"جارٍ التحقق…",change:"تغيير رقم الهاتف",info:"ماذا يحدث بعد الطلب؟",help:"إذا لم يعد رقم الهاتف متاحاً لك، أو لم يصلك رمز SMS، أو كان لديك أكثر من حساب مرتبط بالرقم، تواصل مع الدعم للتحقق اليدوي من هويتك.",support:"التواصل مع دعم EURO عبر واتساب",policy:"العودة إلى سياسة الخصوصية",footer:"جميع الحقوق محفوظة",placeholder:"09xxxxxxxx أو 9639xxxxxxxx",result:"تم تسجيل طلب حذف الحساب",requested:"تاريخ الطلب:",due:"موعد تنفيذ الحذف:",cancel:"يمكنك إلغاء الطلب من داخل التطبيق ما دام تنفيذه لم يكتمل.",fallback:"حدث خطأ غير متوقع."},
+    en:{title:"Request account deletion",subtitle:"You can request account deletion without signing in to the app. We verify account ownership using an SMS code sent to your registered phone number.",meta:"Verification by SMS",send:"Send verification code",sending:"Sending code…",sms:"We will send a one-time SMS code to the phone number you enter. The code is valid for 10 minutes.",code:"Enter the verification code sent by SMS",confirm:"Verify and submit deletion request",verifying:"Verifying…",change:"Change phone number",info:"What happens after your request?",help:"If you no longer have access to the phone number, do not receive an SMS code, or have multiple accounts linked to it, contact support for manual identity verification.",support:"Contact EURO support on WhatsApp",policy:"Back to Privacy Policy",footer:"All rights reserved",placeholder:"09xxxxxxxx or 9639xxxxxxxx",result:"Your account deletion request has been submitted",requested:"Request date:",due:"Scheduled deletion date:",cancel:"You can cancel the request in the app as long as it has not been completed.",fallback:"An unexpected error occurred."}
+  };
+  const infoAr=[
+    "تبدأ مهلة استرجاع مدتها 30 يوماً من تاريخ تسجيل الطلب.",
+    "يمكنك إلغاء الطلب من داخل التطبيق ما دام تنفيذه لم يكتمل.",
+    "بعد انتهاء المهلة، يُعطّل الحساب وتُزال بيانات الهوية ووسائل تسجيل الدخول والبيانات الشخصية، بما فيها عناوين التسليم المحفوظة والمركبات ورموز الإشعارات وصور الملف الشخصي.",
+    "إذا بقي طلب تجاري قيد التنفيذ، نحتفظ مؤقتاً ببيانات الاتصال أو التسليم الضرورية لإكماله فقط، ونزيلها تلقائياً عند إغلاق الطلب. وتُحذف صور الطلبات الخاصة عند إغلاق الطلب المرتبط بها.",
+    "لا يمنع وجود دين أو رصيد كاش باك أو عمولات أو طلب سحب أو طلب تجاري مفتوح تنفيذ حذف الهوية. نحتفظ بمعرّف داخلي غير قابل لتسجيل الدخول وبالسجلات المالية والتجارية اللازمة لتسوية الالتزامات والمحاسبة، مع فصلها عن الاسم ورقم الهاتف وبيانات الاتصال. طلب الحذف لا يلغي ديناً مستحقاً ولا يسقط مبلغاً مستحقاً للمستخدم.",
+    "إذا كان لك رصيد كاش باك أو عمولات مستحقة لم تُحوّل قبل الحذف، تواصل مع دعم EURO للتحقق من الاستحقاق وترتيب التسوية يدوياً؛ ولا يُعد تعطيل الحساب تنازلاً عن المبلغ المستحق.",
+    "نحتفظ بالسجلات المالية للمدة اللازمة قانونياً ومحاسبياً وتسوية النزاعات، ثم نحذفها أو نجهّلها عندما تنتهي الحاجة المشروعة للاحتفاظ بها."
+  ];
+  const infoEn=[
+    "A 30-day grace period starts on the date your request is registered.",
+    "You can cancel the request from inside the app as long as it has not been completed.",
+    "After the grace period, the account is disabled and identity, sign-in, and personal data are removed, including saved delivery addresses, vehicles, notification tokens, and profile photos.",
+    "If a commercial order is still in progress, we temporarily retain only the contact or delivery details needed to complete it and remove them automatically when the order is closed. Special-request images are deleted when the related request is closed.",
+    "An outstanding debt, cashback balance, commission, withdrawal request, or open commercial order does not prevent identity deletion. We retain a non-login internal identifier and the financial and commercial records needed to settle obligations and meet accounting requirements, separated from your name, phone number, and contact details. Deletion does not cancel an outstanding debt or forfeit an amount owed to you.",
+    "If you have cashback or commissions that have not been paid before deletion, contact EURO support to verify the amount and arrange settlement manually. Disabling the account does not mean you waive an amount owed to you.",
+    "We retain financial records for as long as legally or commercially necessary to meet accounting requirements and resolve disputes, then delete or anonymize them when there is no longer a legitimate need to retain them."
+  ];
+  function setLang(next){
+    lang=next;const t=translations[lang],isAr=lang==="ar";document.documentElement.lang=lang;document.documentElement.dir=isAr?"rtl":"ltr";document.body.dir=isAr?"rtl":"ltr";
+    $("page-title").textContent=t.title;$("page-subtitle").textContent=t.subtitle;$("meta-label").textContent=t.meta;$("send-button").textContent=t.send;$("sms-note").textContent=t.sms;$("code-label").textContent=t.code;$("confirm-button").textContent=t.confirm;$("change-phone").textContent=t.change;$("info-title").textContent=t.info;$("help-text").textContent=t.help;$("support-link").textContent=t.support;$("policy-link").textContent=t.policy;$("footer-label").textContent=t.footer;$("phone").placeholder=t.placeholder;
+    document.querySelectorAll("[data-ar][data-en]").forEach(el=>el.textContent=el.dataset[lang]);
+    $("info-list").replaceChildren(...(isAr?infoAr:infoEn).map(item=>{const li=document.createElement("li");li.textContent=item;return li;}));
+    $("ar-btn").setAttribute("aria-pressed",String(isAr));$("en-btn").setAttribute("aria-pressed",String(!isAr));
   }
-  async function post(payload){
-    const response=await fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
-    let data={};try{data=await response.json()}catch(_){}
-    if(!response.ok)throw new Error(data.error||"تعذر إكمال الطلب. حاول لاحقاً.");
-    return data;
-  }
+  function feedback(message,type){const el=$("feedback");el.textContent=message;el.className="status "+(type==="error"?"error":"success");}
+  async function post(payload){const response=await fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});let data={};try{data=await response.json()}catch(_){}if(!response.ok)throw new Error(data.error||"تعذر إكمال الطلب. حاول لاحقاً.");return data;}
+  $("ar-btn").addEventListener("click",()=>setLang("ar"));$("en-btn").addEventListener("click",()=>setLang("en"));
   $("send-form").addEventListener("submit",async event=>{
-    event.preventDefault();const button=$("send-button");button.disabled=true;button.textContent="جارٍ إرسال الرمز…";$("feedback").className="hidden";
-    try{
-      const phone=$("phone").value.trim();const role=$("role").value;
-      const data=await post({action:"send-code",phone,role});
-      otpToken=data.otpToken||"";
-      if(!otpToken)throw new Error("لم يصل رمز التحقق. حاول لاحقاً.");
-      $("step-phone").classList.add("hidden");$("step-code").classList.remove("hidden");$("code").focus();
-      feedback(data.message||"إذا كان الرقم مرتبطاً بحساب، سيصلك رمز التحقق عبر SMS.","success");
-    }catch(error){feedback(error instanceof Error?error.message:"حدث خطأ غير متوقع.","error")}
-    finally{button.disabled=false;button.textContent="إرسال رمز التحقق"}
+    event.preventDefault();const button=$("send-button");button.disabled=true;button.textContent=translations[lang].sending;$("feedback").className="hidden";
+    try{const data=await post({action:"send-code",phone:$("phone").value.trim(),role:$("role").value});otpToken=data.otpToken||"";if(!otpToken)throw new Error("لم يصل رمز التحقق. حاول لاحقاً.");$("step-phone").classList.add("hidden");$("step-code").classList.remove("hidden");$("code").focus();feedback(data.message||(lang==="ar"?"إذا كان الرقم مرتبطاً بحساب، سيصلك رمز التحقق عبر SMS.":"If the number is linked to an account, you will receive an SMS verification code."),"success");}
+    catch(error){feedback(error instanceof Error?error.message:translations[lang].fallback,"error")}
+    finally{button.disabled=false;button.textContent=translations[lang].send;}
   });
   $("confirm-form").addEventListener("submit",async event=>{
-    event.preventDefault();const button=$("confirm-button");button.disabled=true;button.textContent="جارٍ التحقق…";$("feedback").className="hidden";
+    event.preventDefault();const button=$("confirm-button");button.disabled=true;button.textContent=translations[lang].verifying;$("feedback").className="hidden";
     try{
       const data=await post({action:"confirm-code",phone:$("phone").value.trim(),role:$("role").value,otpCode:$("code").value.trim(),otpToken});
-      const request=data.request||{};const fmt=value=>value?new Intl.DateTimeFormat("ar-SY",{dateStyle:"long",timeStyle:"short"}).format(new Date(value)):"—";
-      $("step-code").classList.add("hidden");
-      $("result").classList.remove("hidden");
-      $("result").className="status success";
-      $("result").innerHTML="<strong>تم تسجيل طلب حذف الحساب</strong><p>تاريخ الطلب: "+fmt(request.requestedAt)+"</p><p>موعد تنفيذ الحذف: "+fmt(request.dueAt)+"</p><p>يمكنك إلغاء الطلب من داخل التطبيق ما دام تنفيذه لم يكتمل.</p>";
-      feedback(data.message||"تم تسجيل طلب حذف الحساب بنجاح.","success");
-    }catch(error){feedback(error instanceof Error?error.message:"حدث خطأ غير متوقع.","error")}
-    finally{button.disabled=false;button.textContent="تأكيد وتسجيل طلب الحذف"}
+      const request=data.request||{},fmt=value=>value?new Intl.DateTimeFormat(lang==="ar"?"ar-SY":"en-GB",{dateStyle:"long",timeStyle:"short"}).format(new Date(value)):"—";
+      $("step-code").classList.add("hidden");const result=$("result");result.replaceChildren();result.className="status success";
+      const strong=document.createElement("strong");strong.textContent=translations[lang].result;result.append(strong);
+      [[translations[lang].requested,fmt(request.requestedAt)],[translations[lang].due,fmt(request.dueAt)]].forEach(([label,value])=>{const p=document.createElement("p");p.textContent=label+" "+value;result.append(p);});
+      const p=document.createElement("p");p.textContent=translations[lang].cancel;result.append(p);
+      feedback(data.message||(lang==="ar"?"تم تسجيل طلب حذف الحساب بنجاح.":"Your account deletion request was submitted successfully."),"success");
+    }catch(error){feedback(error instanceof Error?error.message:translations[lang].fallback,"error")}
+    finally{button.disabled=false;button.textContent=translations[lang].confirm;}
   });
   $("change-phone").addEventListener("click",()=>{otpToken="";$("code").value="";$("step-code").classList.add("hidden");$("step-phone").classList.remove("hidden");$("feedback").className="hidden"});
+  setLang("ar");
 })();
 </script>
 </body>
